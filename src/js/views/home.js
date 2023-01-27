@@ -11,11 +11,23 @@ export const Home = () => (
 		<Card/>
 		<Card/>
 		<Card/>
-		<Card/>
-		<Card/>
-		
 		</div>
 		
-		 
+		<h1 className="text-center fs-1 mt-5 text-danger">Planets</h1>
+		<div class="container-flex text-center mt-5 d-flex overflow-auto">
+		<Card/>
+		<Card/>
+		<Card/>
+		<Card/>
+		</div>
+		
+		
+		<h1 className="text-center fs-1 mt-5 text-danger">Vehicles</h1>
+		<div class="container-flex text-center mt-5 d-flex overflow-auto">
+		<Card/>
+		<Card/>
+		<Card/>
+		<Card/>
+		</div>
 	</div>
 );
