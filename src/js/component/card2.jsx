@@ -26,17 +26,17 @@ import logo from "../../img/logo.png";
 		  <p className="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem sint inventore aperiam voluptatem quos voluptas aspernatur incidunt praesentium recusandae nemo, explicabo nobis veniam iure repellat reprehenderit animi dolorum unde eos? This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 	</div>
     </div>
-    <span class="border border-danger"></span>
+    <span className="border border-danger"></span>
     </div>
-          <div class="container text-center text-danger border-top-danger ">
+          <div className="container text-center text-danger border-top-danger ">
           
-            <div class="row border-top-danger">
-            <div class="col">Name xxxxx </div>
-            <div class="col">Birth Year xxxxxx</div>
-            <div class="col">Gender xxxxx</div>
-            <div class="col">Height xxxxx</div>
-            <div class="col">Skin Color xxxxx</div>
-            <div class="col">Eye Color xxxxx</div>
+            <div className="row border-top-danger">
+            <div className="col">Name xxxxx </div>
+            <div className="col">Birth Year xxxxxx</div>
+            <div className="col">Gender xxxxx</div>
+            <div className="col">Height xxxxx</div>
+            <div className="col">Skin Color xxxxx</div>
+            <div className="col">Eye Color xxxxx</div>
           </div>
 		</div>
     
