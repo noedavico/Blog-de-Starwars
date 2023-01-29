@@ -1,4 +1,3 @@
-import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import Card from "../component/card.jsx";
 import Card2 from "../component/card2.jsx";
@@ -47,7 +46,7 @@ return(
 	<div className="container">
 		<h1 className="text-center bg-7 mt-5 text-warning"> <strong>Characters </strong></h1>
 		<div className="container-flex text-center mt-5 d-flex overflow-auto  border border-warning">
-		{infoPersonaje.length > 0 ? infoPersonaje.map((item,index)=><Card key={index++} id={index++} nombre={item.name} gender={item.gender} hairColor={item.hair_color} eyesColor={item.eye_color}/>): null}
+		{infoPersonaje.length > 0 ? infoPersonaje.map((item,index)=><Card key={index++} id={index++} nombre={item.name} gender={item.gender} hairColor={item.hair_color} eyesColor={item.eye_color} />): null}
 		</div>
 		<h1 className="text-center bg-7 mt-5 text-warning"><strong>Planets</strong></h1>
 		<div className="container-flex text-center mt-5 d-flex overflow-auto border  border-warning">

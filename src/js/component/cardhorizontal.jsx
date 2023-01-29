@@ -15,10 +15,10 @@ export const CardHorizontal = (props) => {
               <p className="card-text"> {props.descripcion}</p>
         </div>
         </div>
-        <span className="border border-danger"></span>
+        <span className="border border-warning"></span>
         </div>
-              <div className="container text-center text-danger border-top-danger ">
-                <div className="row border-top-danger">
+              <div className="container text-center text-white border-top-warning ">
+                <div className="row border-top-warning">
                 <div className="col">Name <br />{props.nombre} </div>
                 <div className="col">Birth Year <br /> {props.nacimiento}</div>
                 <div className="col">Gender <br />{props.sexo}</div>
