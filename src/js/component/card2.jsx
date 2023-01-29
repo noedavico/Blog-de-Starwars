@@ -1,46 +1,28 @@
-import React, {
-    useState,
-    useEffect,
-    useContext
-} from "react";
-import PropTypes from "prop-types";
-import {
-    Link,
-    useParams
-} from "react-router-dom";
-import {
-    Context
-} from "../store/appContext";
-import logo from "../../img/logo.png";
+import React from "react";
+import { Link } from "react-router-dom";
+import logo from "../../img/hombre.jpg";
 
- const Card2 = () => {
-    return (
-	<div className="card mb-3 text-center p-5 m-5" style={{maxWidth: "auto"}}>
-	<div className="row">
-	  <div className="col-xs-12 col-md-4 col-4">
-        <img src={logo} className="img-fluid rounded-start" alt="..."/>
-      </div>
-	  <div className="col-xs-12 col-md-8 col-8">
-		<div className="card-body">
-		  <h1 className="fs-1">Card title</h1>
-		  <p className="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem sint inventore aperiam voluptatem quos voluptas aspernatur incidunt praesentium recusandae nemo, explicabo nobis veniam iure repellat reprehenderit animi dolorum unde eos? This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-	</div>
-    </div>
-    <span className="border border-danger"></span>
-    </div>
-          <div className="container text-center text-danger border-top-danger ">
+
+const Card2 = (props) => {
+	return (
+     <div className="container col-xs-12 col-md-4 col-3 m-2">
+		  <div className="card" style={{width: "22rem"}}>
+         <img src={logo} className="card-img-top" alt="..."/>
+         <div className="card-body">
+         <h4 className="card-title">{props.nombre} </h4>
+          <p className="card-text">
+            <br /> Population:{props.poblacion}
+            <br /> Terrain: {props.terreno}
+          </p>
           
-            <div className="row border-top-danger">
-            <div className="col">Name xxxxx </div>
-            <div className="col">Birth Year xxxxxx</div>
-            <div className="col">Gender xxxxx</div>
-            <div className="col">Height xxxxx</div>
-            <div className="col">Skin Color xxxxx</div>
-            <div className="col">Eye Color xxxxx</div>
-          </div>
-		</div>
-    
-	  </div>  
-    )
-}
+          <Link to={"/demo/"+props.id}  className="btn btn-outline-primary me-4 ms-3">Learn More!</Link>
+         
+         <button type="button" className="btn btn-outline-warning ms-5"><i className="fa fa-heart" /></button>
+         </div>
+     </div>
+			</div>
+		
+	);
+};
+
 export default Card2

@@ -1,0 +1,25 @@
+body {
+    font-family: 'Bungee Inline', cursive;
+    background-image: url(https://p4.wallpaperbetter.com/wallpaper/955/69/70/minimalism-space-stars-wallpaper-preview.jpg);
+}
+
+h1 {
+    font-size: 60px;
+    font-family: 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke: 1px #ffe606;
+    text-align: center;
+    color: #fff;
+
+}
+
+nav {
+    background-color: black;
+}
+
+.card {
+    background-color: black;
+    color: white;
+}
