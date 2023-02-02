@@ -4,12 +4,11 @@ import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { CardHorizontal } from "../component/cardhorizontal.jsx";
 
-export const Demo = () => {
+export const Personajes = () => {
 	const { store, actions } = useContext(Context);
 	const[infoPersonaje, setInfoPersonaje]=useState({})
 	const params = useParams();
-	console.log(params.theid); 
-	console.log(params);
+
 
 	function obtenerinfoPersonaje() {
 		fetch("https://www.swapi.tech/api/people/"+params.theid)
@@ -21,24 +20,20 @@ export const Demo = () => {
 	useEffect(()=>{
 		obtenerinfoPersonaje()
 	},[])
-console.log(infoPersonaje)
-console.log(infoPersonaje.description);    
-console.log(infoPersonaje.properties);
-console.log(infoPersonaje.properties?.name);
-
 	return (
-        <div className="container">
+        <div className="container ">
               <CardHorizontal nombre={infoPersonaje.properties?.name}
-              descripcion={infoPersonaje.description}
+             descripcion={infoPersonaje.description}
              nacimiento={infoPersonaje.properties?.birth_year}
              sexo={infoPersonaje.properties?.gender}
              altura={infoPersonaje.properties?.height}
              pelo={infoPersonaje.properties?.hair_color}
-             ojos={infoPersonaje.properties?.eye_color} />
+             ojos={infoPersonaje.properties?.eye_color}
+			 />
           </div>
 	);
 };
 
-Demo.propTypes = {
+Personajes.propTypes = {
 	match: PropTypes.object
 };

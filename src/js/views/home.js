@@ -26,7 +26,7 @@ export const Home = () => {
 	}
     
 	function obtenerInfoVehiculos() {
-		fetch("https://swapi.dev/api/vehicles")
+		fetch("https://www.swapi.tech/api/vehicles/")
 		.then(res => res.json())
 		.then(data => setInfoVehiculos(data.results))
 		.catch(err => console.error(err))
@@ -40,12 +40,10 @@ export const Home = () => {
 
 
 return(
-	
-	
 
-	<div className="container">
+	<div className="container ">
 		<h1 className="text-center bg-7 mt-5 text-warning"> <strong>Characters </strong></h1>
-		<div className="container-flex text-center mt-5 d-flex overflow-auto  border border-warning">
+		<div className="container-flex text-center mt-5 d-flex overflow-auto border border-warning">
 		{infoPersonaje.length > 0 ? infoPersonaje.map((item,index)=><Card key={index++} id={index++} nombre={item.name} gender={item.gender} hairColor={item.hair_color} eyesColor={item.eye_color} />): null}
 		</div>
 		<h1 className="text-center bg-7 mt-5 text-warning"><strong>Planets</strong></h1>
@@ -54,7 +52,7 @@ return(
 		</div>
 		<h1 className="text-center bg-7 mt-5 text-warning"><strong>Vehicles</strong></h1>
 		<div className="container-flex text-center mt-5 d-flex overflow-auto  border border-warning">
-		{infoVehiculos.length > 0 ? infoVehiculos.map((item,index)=><Card3 key={index++} id={index++} nombre={item.name} pasajeros={item.passengers}  velocidad={item.max_atmosphering_speed}  />): null}
+		{infoVehiculos.length > 0 ? infoVehiculos.map((item,index)=><Card3 key={index++} id={item.uid} nombre={item.name} pasajeros={item.passengers}  velocidad={item.max_atmosphering_speed}  />): null}
 		</div>
 	</div>
 );

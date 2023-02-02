@@ -1,32 +1,38 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../img/hombre.jpg";
+
 
 export const CardHorizontal = (props) => {
+
     return (
-<div className="card mb-3 text-center p-5 m-5" style={{maxWidth: "auto"}}>
+<div className="container card  text-center  m-auto p-auto" style={{maxWidth: "auto"}}>
         <div className="row">
-          <div className="col-xs-12 col-md-4 col-4">
-            <img src={logo} className="img-fluid rounded-start" alt="..."/>
+          <div className="col-12 col-md-6 m-auto p-auto">
+          <img src={"https://starwars-visualguide.com/assets/img/characters/"+props.id+".jpg"} className="m-3 auto" style={{width: "250px"}}/>
           </div>
-          <div className="col-xs-12 col-md-8 col-8">
+          <div className="col-12 col-md-6 m-auto p-auto">
             <div className="card-body">
               <h1 className="fs-1">{props.nombre}</h1>
-              <p className="card-text"> {props.descripcion}</p>
-        </div>
+              <p className="card-text">{props.descripcion}</p>       
+              </div>
         </div>
         <span className="border border-warning"></span>
         </div>
-              <div className="container text-center text-white border-top-warning ">
-                <div className="row border-top-warning">
-                <div className="col">Name <br />{props.nombre} </div>
-                <div className="col">Birth Year <br /> {props.nacimiento}</div>
-                <div className="col">Gender <br />{props.sexo}</div>
-                <div className="col">Height <br />{props.altura}</div>
-                <div className="col">Skin Color <br />{props.pelo}</div>
-                <div className="col">Eye Color <br />{props.ojos}</div>
-              </div>
+              <div className="row text-center text-white mb-3 border-top-warning">               
+                <div className="col-xs-4 col-md-2">Name <br />{props.nombre} </div>
+                <div className="col-xs-4 col-md-2">Birth Year <br />{props.nacimiento}</div>
+                <div className="col-xs-4 col-md-2">Gender <br />{props.sexo}</div>
+                <div className="col-xs-4 col-md-2">Height <br />{props.altura}</div>
+                <div className="col-xs-4 col-md-2">Skin Color <br />{props.pelo}</div>
+                <div className="col-xs-4 col-md-2">Eye Color <br />{props.ojos}</div>
             </div>
+            <div className="row">
+				<Link to="/">
+					<span className="btn btn-outline-warning" href="#" role="button">
+						Back home
+					</span>
+				</Link>
+			</div>
           </div>  
 	);
 };
