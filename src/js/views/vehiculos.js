@@ -6,31 +6,26 @@ import { CardHorizontal2 } from "../component/cardhorizontal2.jsx";
 
 export const Vehiculos = props => {
 	const { store, actions } = useContext(Context);
-	const[infoVehiculos, setInfoVehiculos]=useState({})
-	const params = useParams();
+  const params = useParams();
+	console.log(params.theid); 
+	console.log(params);
 
-	function obtenerInfoVehiculos() {
-		fetch("https://www.swapi.tech/api/vehicles/"+params.theid)
-		.then(res => res.json())
-		.then(data => setInfoVehiculos(data.result))
-		.catch(err => console.error(err))
-	}
- console.log(infoVehiculos.description)
+	
 	useEffect(()=>{
-		obtenerInfoVehiculos()
+		actions.loadinfoVehiculos(params.theid)
 	},[])
-
+ 
     return (
         <div className="container ">
-              <CardHorizontal2 nombrevehiculo={infoVehiculos.properties?.name}
-            descripcion={infoVehiculos.description}
-            model={infoVehiculos.properties?.model}
-            length={infoVehiculos.properties?.length}
-            passengers={infoVehiculos.properties?.passengers}
-             speed={infoVehiculos.properties?.rmax_atmosphering_speed}
-             crew={infoVehiculos.properties?.crew}
-			 id={params.theid}/>
-            
+              <CardHorizontal2 nombrevehiculo={store.infoVehiculos.properties?.name}
+            descripcion={store.infoVehiculos.description}
+            model={store.infoVehiculos.properties?.model}
+            length={store.infoVehiculos.properties?.length}
+            passengers={store.infoVehiculos.properties?.passengers}
+             speed={store.infoVehiculos.properties?.rmax_atmosphering_speed}
+             crew={store.infoVehiculos.properties?.crew}
+			 id={params.theid}
+			 />
         </div>
 	);
 };

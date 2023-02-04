@@ -1,16 +1,15 @@
 import { Link } from "react-router-dom";
-import React, {useState, useEffect}  from "react";
-
+import React, {useContext, useState, useEffect}  from "react";
+import { Context } from "../store/appContext";
 
 const Card = (props) => {
-// const [arrayFavorito, setArrayFavoritos] = useState ([]);
-// const nombre = props.nombre .
-// const agregarFavorito = () => {
-//   setArrayFavoritos ([arrayFavorito.concat(nombre)])
-// };
+
+const { store, actions } = useContext(Context);
+
+
 
 	return (
-     <div className="col ">
+     <div className="col mx-2 ">
 		  <div className="card" style={{width: "22rem"}}>
       <img src={require(`../../img/${props.nombre}.jpg`).default} className="card-img-top" style={{height: "22rem", width: "100%"}} alt="..."/>
          <div className="card-body">
@@ -25,7 +24,7 @@ const Card = (props) => {
           <Link to={"/personajes/"+props.id}  className="btn  btn-outline-warning me-4 ms-3">Learn More!</Link>
           </div>
           <div className="col-6">
-         <button type="button" className="btn btn-outline-warning ms-5"><i className="fa fa-heart" /></button>
+         <button type="button" onClick={() => actions.agregarFavoritos(props.nombre)} className="btn btn-outline-warning ms-5"><i className="fa fa-heart" /></button>
          </div>
       </div>
      </div>

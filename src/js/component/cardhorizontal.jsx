@@ -1,14 +1,23 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
+import React, { useEffect, useContext } from "react";
+import { Link, useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const CardHorizontal = (props) => {
+const { store, actions } = useContext(Context);
+const params = useParams();
+	console.log(params.theid); 
+	console.log(params);
+
+      useEffect (()=>{
+            actions.loadinfoPersonajes(params.theid);
+      },[])
+
 
     return (
 <div className="container card  text-center  m-auto p-auto" style={{maxWidth: "auto"}}>
         <div className="row">
           <div className="col-12 col-md-6 m-auto p-auto">
-          <img src={"https://starwars-visualguide.com/assets/img/characters/"+props.id+".jpg"} className="m-3 auto" style={{width: "250px"}}/>
+          <img src={"https://starwars-visualguide.com/assets/img/characters/"+params.theid+".jpg"} className="m-3 auto img-fluid " style={{width: "250px"}}/>
           </div>
           <div className="col-12 col-md-6 m-auto p-auto">
             <div className="card-body">

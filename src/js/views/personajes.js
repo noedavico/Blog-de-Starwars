@@ -6,29 +6,23 @@ import { CardHorizontal } from "../component/cardhorizontal.jsx";
 
 export const Personajes = () => {
 	const { store, actions } = useContext(Context);
-	const[infoPersonaje, setInfoPersonaje]=useState({})
 	const params = useParams();
+	console.log(params.theid); 
+	console.log(params);
 
+      useEffect (()=>{
+            actions.loadinfoPersonajes(params.theid);
+      },[])
 
-	function obtenerinfoPersonaje() {
-		fetch("https://www.swapi.tech/api/people/"+params.theid)
-		.then(res => res.json())
-		.then(data => setInfoPersonaje(data.result))
-		.catch(err => console.error(err))
-	}
-
-	useEffect(()=>{
-		obtenerinfoPersonaje()
-	},[])
 	return (
         <div className="container ">
-              <CardHorizontal nombre={infoPersonaje.properties?.name}
-             descripcion={infoPersonaje.description}
-             nacimiento={infoPersonaje.properties?.birth_year}
-             sexo={infoPersonaje.properties?.gender}
-             altura={infoPersonaje.properties?.height}
-             pelo={infoPersonaje.properties?.hair_color}
-             ojos={infoPersonaje.properties?.eye_color}
+              <CardHorizontal nombre={store.infoPersonajes.properties?.name}
+             descripcion={store.infoPersonajes.description}
+             nacimiento={store.infoPersonajes.properties?.birth_year}
+             sexo={store.infoPersonajes.properties?.gender}
+             altura={store.infoPersonajes.properties?.height}
+             pelo={store.infoPersonajes.properties?.hair_color}
+             ojos={store.infoPersonajes.properties?.eye_color}
 			 />
           </div>
 	);

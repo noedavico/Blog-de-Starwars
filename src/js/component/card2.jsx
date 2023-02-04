@@ -1,11 +1,12 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../img/hombre.jpg";
-
+import React, {useContext, useState, useEffect}  from "react";
+import { Context } from "../store/appContext";
 
 const Card2 = (props) => {
+  const { store, actions } = useContext(Context);
+
 	return (
-     <div className="col gap-3  ">
+     <div className="col mx-2">
 		  <div className="card" style={{width: "22rem"}}>
       <img src={require(`../../img/${props.nombre}.jpg`).default} className="card-img-top" style={{height: "22rem", width: "100%"}} alt="..."/>
          <div className="card-body">
