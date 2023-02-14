@@ -16,13 +16,13 @@ export const Personajes = () => {
 
 	return (
         <div className="container ">
-              <CardHorizontal nombre={store.infoPersonajes.properties?.name}
-             descripcion={store.infoPersonajes.description}
-             nacimiento={store.infoPersonajes.properties?.birth_year}
-             sexo={store.infoPersonajes.properties?.gender}
-             altura={store.infoPersonajes.properties?.height}
-             pelo={store.infoPersonajes.properties?.hair_color}
-             ojos={store.infoPersonajes.properties?.eye_color}
+              <CardHorizontal nombre={store.infoPersonajes?.properties?.name}
+             descripcion={store.infoPersonajes?.description}
+             nacimiento={store.infoPersonajes?.properties?.birth_year}
+             sexo={store.infoPersonajes?.properties?.gender}
+             altura={store.infoPersonajes?.properties?.height}
+             pelo={store.infoPersonajes?.properties?.hair_color}
+             ojos={store.infoPersonajes?.properties?.eye_color}
 			 />
           </div>
 	);

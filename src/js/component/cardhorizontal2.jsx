@@ -15,7 +15,7 @@ export const CardHorizontal2= (props) => {
 	},[])
 
   return (
-<div className="card mb-3 text-center p-5 m-5" style={{maxWidth: "auto"}}>
+<div className="container card text-center P-3 m-3" style={{maxWidth: "auto"}}>
         <div className="row">
           <div className="col-12 col-md-6 m-auto p-auto">
           <img src={"https://starwars-visualguide.com/assets/img/vehicles/"+params.theid+".jpg"} className="m-3 auto img-fluid" style={{width: "250px"}}/>
@@ -28,7 +28,7 @@ export const CardHorizontal2= (props) => {
         </div>
         <span className="border border-warning"></span>
         </div>
-              <div className="ow text-center text-white mb-3 border-top-warning">
+              <div className="row text-center text-white mb-3 border-top-warning">
                 <div className="row border-top-warning">
                 <div className="col">Name <br />{props.nombrevehiculo} </div>
                 <div className="col">Model <br /> {props.model}</div>

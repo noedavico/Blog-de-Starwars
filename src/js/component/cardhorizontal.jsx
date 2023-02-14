@@ -5,35 +5,35 @@ import { Context } from "../store/appContext";
 export const CardHorizontal = (props) => {
 const { store, actions } = useContext(Context);
 const params = useParams();
-	console.log(params.theid); 
-	console.log(params);
 
+
+// llamo a la funcion loadin... declarada en flux la cual le paso como parametro params.theid (variable dinámica para conformar la URL en este caso para el fetch) y acedar a la info detallada de cada personaje
       useEffect (()=>{
             actions.loadinfoPersonajes(params.theid);
       },[])
 
 
     return (
-<div className="container card  text-center  m-auto p-auto" style={{maxWidth: "auto"}}>
+<div className="container card text-center P-3 m-3" style={{maxWidth: "auto"}}>
         <div className="row">
           <div className="col-12 col-md-6 m-auto p-auto">
-          <img src={"https://starwars-visualguide.com/assets/img/characters/"+params.theid+".jpg"} className="m-3 auto img-fluid " style={{width: "250px"}}/>
+          <img src={"https://starwars-visualguide.com/assets/img/characters/"+params.theid+".jpg"} className="m-auto img-fluid rounded-start " style={{width: "250px"}}/>
           </div>
           <div className="col-12 col-md-6 m-auto p-auto">
             <div className="card-body">
-              <h1 className="fs-1">{props.nombre}</h1>
+              <h1 >{props.nombre}</h1>
               <p className="card-text">{props.descripcion}</p>       
               </div>
         </div>
         <span className="border border-warning"></span>
         </div>
               <div className="row text-center text-white mb-3 border-top-warning">               
-                <div className="col-xs-4 col-md-2">Name <br />{props.nombre} </div>
-                <div className="col-xs-4 col-md-2">Birth Year <br />{props.nacimiento}</div>
-                <div className="col-xs-4 col-md-2">Gender <br />{props.sexo}</div>
-                <div className="col-xs-4 col-md-2">Height <br />{props.altura}</div>
-                <div className="col-xs-4 col-md-2">Skin Color <br />{props.pelo}</div>
-                <div className="col-xs-4 col-md-2">Eye Color <br />{props.ojos}</div>
+                <div className="col">Name <br />{props.nombre} </div>
+                <div className="col">Birth Year <br />{props.nacimiento}</div>
+                <div className="col">Gender <br />{props.sexo}</div>
+                <div className="col">Height <br />{props.altura}</div>
+                <div className="col">Skin Color <br />{props.pelo}</div>
+                <div className="col">Eye Color <br />{props.ojos}</div>
             </div>
             <div className="row">
 				<Link to="/">
@@ -42,7 +42,7 @@ const params = useParams();
 					</span>
 				</Link>
 			</div>
-          </div>  
+  </div>  
 	);
 };
 

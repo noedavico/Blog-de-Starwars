@@ -20,7 +20,7 @@ const injectContext = PassedComponent => {
 					})
 			})
 		);
-
+            //Estoy llamando a las funcion que cree en actions de flux para que se ejecuten al cargar la pagina y realizar los fetch a la api.
 			useEffect(() => {
 				state.actions.loadPersonajes()
 				state.actions.loadPlanetas() 
